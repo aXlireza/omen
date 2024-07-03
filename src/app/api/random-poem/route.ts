@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
         
         randomPoem = poems[Math.floor(Math.random() * poems.length)];
       },
-      error: (error) => {
+      error: (error: { message: any; }) => {
         return NextResponse.json({ error: error.message }, { status: 500 });
       },
     });
