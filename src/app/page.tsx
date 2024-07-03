@@ -100,7 +100,7 @@ export default function Home() {
       .bg-gradient-to-bl {
         background: linear-gradient(135deg, #6b2d5c, #452b52, #282439);
         background-size: 800% 800%;
-        animation: gradient2 60s ease infinite;
+        animation: gradient2 100s ease infinite;
       }
     `}</style>
     </div>
