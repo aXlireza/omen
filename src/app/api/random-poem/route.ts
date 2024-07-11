@@ -31,8 +31,9 @@ export async function GET(req: NextRequest) {
           })
         });
         // console.log(poems);
-        
-        randomPoem = poems[Math.floor(Math.random() * poems.length)];
+        const therandom = Math.floor(Math.random() * poems.length)
+        console.log(therandom, poems.length);
+        randomPoem = poems[therandom];
       },
       error: (error: { message: any; }) => {
         return NextResponse.json({ error: error.message }, { status: 500 });
