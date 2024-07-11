@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
-import seedrandom from 'seedrandom';
+import { randomBytes } from 'crypto';
 
 type PoemData = {
   poem: string[];
@@ -16,8 +16,6 @@ export async function GET(req: NextRequest) {
     const fileContent = fs.readFileSync(csvFilePath, 'utf8');
 
     let randomPoem: PoemData | null = null;
-    const rng = seedrandom();
-    const randomValue = rng();
 
     Papa.parse(fileContent, {
       header: true,
@@ -34,6 +32,8 @@ export async function GET(req: NextRequest) {
           })
         });
         // console.log(poems);
+        const randomValue = parseFloat(`0.${randomBytes(4).toString('hex')}`);
+
         const therandom = Math.floor(randomValue * poems.length)
         console.log(therandom, poems.length);
         randomPoem = poems[therandom];
