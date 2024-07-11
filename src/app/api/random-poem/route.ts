@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
-import { randomBytes } from 'crypto';
 
 type PoemData = {
   poem: string[];
@@ -19,7 +18,7 @@ export async function GET(req: NextRequest) {
 
     Papa.parse(fileContent, {
       header: true,
-      complete: (results: Papa.ParseResult<any>) => {
+      complete: async (results: Papa.ParseResult<any>) => {
         // console.log(results.data.length);
         
         const poems = results.data.slice(0, results.data.length-1).map((row: any, index:number) => {
@@ -32,11 +31,12 @@ export async function GET(req: NextRequest) {
           })
         });
         // console.log(poems);
-        const randomValue = parseFloat(`0.${randomBytes(4).toString('hex')}`);
+        const response = await fetch(`https://www.random.org/integers/?num=1&min=0&max=${results.data.length}&col=1&base=10&format=plain&rnd=new`);
+        const randomValue = await response.text();
 
-        const therandom = Math.floor(randomValue * poems.length)
+        const therandom = Math.floor(Number(randomValue.trim()) * poems.length)
         console.log(therandom, poems.length);
-        randomPoem = poems[therandom];
+        randomPoem = poems[Number(randomValue.trim())];
       },
       error: (error: { message: any; }) => {
         return NextResponse.json({ error: error.message }, { status: 500 });
