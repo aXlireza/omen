@@ -22,20 +22,17 @@ export async function GET(req: NextRequest) {
         // console.log(results.data.length);
         
         const poems = results.data.slice(0, results.data.length-1).map((row: any, index:number) => {
-          // console.log(row.Interpreted.replace(/'/g, '"'));
-          // console.log(index);
-          
           return ({
             poem: JSON.parse(row.Poem.replace(/'/g, '"')),
             interpreted: JSON.parse(row.Interpreted.replace(/'/g, '"')),
           })
         });
-        // console.log(poems);
-        const response = await fetch(`https://www.random.org/integers/?num=1&min=0&max=${results.data.length}&col=1&base=10&format=plain&rnd=new`);
+
+        const response = await fetch(`https://www.random.org/integers/?num=1&min=0&max=${results.data.length}&col=1&base=10&format=plain&rnd=new`, { cache: 'no-store' });
         const randomValue = await response.text();
 
-        const therandom = Math.floor(Number(randomValue.trim()) * poems.length)
-        console.log(therandom, poems.length);
+        // const therandom = Math.floor(Number(randomValue.trim()) * poems.length)
+        console.log(Number(randomValue.trim()));
         randomPoem = poems[Number(randomValue.trim())];
       },
       error: (error: { message: any; }) => {
