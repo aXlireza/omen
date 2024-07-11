@@ -14,7 +14,7 @@ const parseCSV = (fileContent: string) => {
     Papa.parse(fileContent, {
       header: true,
       complete: (results) => resolve(results),
-      error: (error) => reject(error),
+      error: (error: Error) => reject(error),
     });
   });
 };
