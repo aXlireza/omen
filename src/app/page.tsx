@@ -37,7 +37,8 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen flex items-center justify-center text-white transition-all duration-1000 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 z-1`}>
-      <div className={`transition-opacity duration-1000 bg-gradient-to-bl from-purple-700 via-purple-800 to-purple-900 ${loading ? 'opacity-100' : 'opacity-0'} min-h-full min-w-full top-0 left-0 absolute z-2`}></div>
+      <div className={`transition-opacity duration-1000 bg-gradient-to-bl from-purple-700 via-purple-800 to-purple-900 ${loading ? 'opacity-100' : 'opacity-0'} h-full min-w-full top-0 left-0 fixed z-2`}></div>
+      {/* <div className={`transition-opacity duration-1000 bg-gradient-to-bl from-purple-700 via-purple-800 to-purple-900 opacity-100 h-full min-w-full top-0 left-0 fixed z-2`}></div> */}
       <Head>
         <title>Make a Wish</title>
       </Head>
