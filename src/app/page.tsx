@@ -59,11 +59,11 @@ export default function Home() {
           </button>
           <div className={`mb-8 transition-opacity duration-1000 ${!loading ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
             <h1 className="text-3xl font-semibold mb-4 text-stone-700 font-[Vazirmatn]">شعر</h1>
-            {data?.poem.map((line, key) => <p key={key} style={{fontFamily: 'auto'}} className="text-sm md:text-8xl text-stone-700">{line}</p>) || ''}
+            {data?.poem.map((line, key) => <p key={key} style={{fontFamily: 'auto'}} className="text-lg text-stone-700">{line}</p>) || ''}
           </div>
           <div className={`mb-8 transition-opacity duration-1000 ${!loading ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
             <h1 className="text-3xl font-semibold mb-4 text-stone-700">تفسیر</h1>
-            {data?.interpreted.map((line, key) => <p key={key} style={{fontFamily: 'auto'}} className="text-sm md:text-8xl text-stone-700">{line}</p>) || ''}
+            {data?.interpreted.map((line, key) => <p key={key} style={{fontFamily: 'auto'}} className="text-lg text-stone-700">{line}</p>) || ''}
           </div>
         </div>
       </div>
