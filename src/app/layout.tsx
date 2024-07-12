@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "soon to be AIed",
   twitter: {
     title: "Make a Wish",
-    images: ['public/Screenshot from 2024-07-04 00-43-53.png']
+    images: ['Screenshot from 2024-07-04 00-43-53.png']
   }
 };
 
