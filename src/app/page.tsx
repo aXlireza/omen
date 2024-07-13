@@ -15,30 +15,17 @@ export default function Home() {
 
   const handleClick = async () => {
     setLoading(true);
-    // setData(null);
-    // Simulate a background transition delay
     await new Promise((resolve) => setTimeout(resolve, 2000));
     fetch('/api/random-poem')
       .then((response) => response.json())
-      .then((data: PoemData) => {console.log(data);
-       setData(data)})
+      .then((data: PoemData) => setData(data))
       .then(() => setLoading(false))
       .catch((error) => console.error('Error fetching CSV data:', error));
-
-    // // Simulate fetching data from an API
-    // const poemData = {
-    //   poem: "Your poem goes here...",
-    //   interpreted: "Your interpretation goes here..."
-    // };
-    
-    // setData(poemData);
-    // setLoading(false);
   };
 
   return (
     <div className={`min-h-screen flex items-center justify-center text-white transition-all duration-1000 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 z-1`}>
       <div className={`transition-opacity duration-1000 bg-gradient-to-bl from-purple-700 via-purple-800 to-purple-900 ${loading ? 'opacity-100' : 'opacity-0'} h-full min-w-full top-0 left-0 fixed z-2`}></div>
-      {/* <div className={`transition-opacity duration-1000 bg-gradient-to-bl from-purple-700 via-purple-800 to-purple-900 opacity-100 h-full min-w-full top-0 left-0 fixed z-2`}></div> */}
       <Head>
         <title>Make a Wish</title>
       </Head>
@@ -58,12 +45,7 @@ export default function Home() {
             <span>Another Wish</span>
           </button>
           <div className={`mb-8 transition-opacity duration-1000 ${!loading ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-            <h1 className="text-3xl font-semibold mb-4 text-stone-700 font-[Vazirmatn]">شعر</h1>
-            {data?.poem.map((line, key) => <p key={key} style={{fontFamily: 'auto'}} className="text-lg text-stone-700">{line}</p>) || ''}
-          </div>
-          <div className={`mb-8 transition-opacity duration-1000 ${!loading ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
-            <h1 className="text-3xl font-semibold mb-4 text-stone-700">تفسیر</h1>
-            {data?.interpreted.map((line, key) => <p key={key} style={{fontFamily: 'auto'}} className="text-lg text-stone-700">{line}</p>) || ''}
+            <h1 style={{fontFamily: 'Morabba'}} className="font-semibold text-7xl text-stone-700">{data?.poem[0]}</h1>
           </div>
         </div>
       </div>
