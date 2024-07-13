@@ -11,9 +11,15 @@ export const metadata: Metadata = {
   title: "Make a Wish",
   description: "Omens",
   twitter: {
-    title: "Make a Wish",
-    images: ['public/thumbnail.png']
+    card: "summary_large_image",
+    site: "@site",
+    creator: "@creator",
+    "images": "https://omen-seven.vercel.app/thumbnail.png"
   }
+  // {
+  //   title: "Make a Wish",
+  //   images: ['public/thumbnail.png']
+  // }
 };
 
 export default function RootLayout({
