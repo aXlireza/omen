@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Make a Wish",
-  description: "soon to be AIed",
+  description: "Omens",
   twitter: {
     title: "Make a Wish",
-    images: ['Screenshot from 2024-07-04 00-43-53.png']
+    images: ['public/thumbnail.png']
   }
 };
 
