@@ -12,11 +12,14 @@ export default function PoemCard({ poem, interpreted }:PoemData) {
     <div className="text-center max-w-4xl mx-auto p-6 z-3 relative">
       <div className={``}>
         <div className={`mb-8 transition-opacity duration-1000 opacity-100`} style={{ transitionDelay: '200ms' }}>
-          <h1 style={{fontFamily: 'Morabba'}} className="text-6xl font-semibold mb-4 text-stone-700">شعر</h1>
-          {poem.map((line, key) => <p key={key} style={{fontFamily: 'Morabba'}} className="font-medium text-2xl text-stone-700 leading-9">{line}</p>) || ''}
+          <h1 style={{fontFamily: 'Morabba'}} className="text-7xl font-semibold mb-4 text-stone-700">شعر</h1>
+          {poem.map((line, key) => <p key={key} style={{fontFamily: 'Morabba'}} className="font-medium text-2xl text-stone-700 leading-9">
+            <span>{line[0]} </span>
+            <span>{line[1]}</span>
+          </p>) || ''}
         </div>
         <div className={`mb-8 transition-opacity duration-1000 opacity-100`} style={{ transitionDelay: '300ms' }}>
-          <h1 style={{fontFamily: 'Morabba'}} className="text-6xl font-semibold mb-4 text-stone-700">تفسیر</h1>
+          <h1 style={{fontFamily: 'Morabba'}} className="text-7xl font-semibold mb-4 text-stone-700">تفسیر</h1>
           {interpreted.map((line, key) => <p key={key} style={{fontFamily: 'Morabba'}} className="font-medium text-2xl text-stone-700 leading-9">{line}</p>) || ''}
         </div>
       </div>

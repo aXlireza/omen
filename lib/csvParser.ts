@@ -29,10 +29,11 @@ export function parseCSV() {
   const csvFilePath = path.resolve('./public/poems.csv');
   const fileContent = fs.readFileSync(csvFilePath, 'utf8');
 
-  // try {
   const results = Papa.parse(fileContent, {
     header: true,
   });
+
+  // console.log(JSON.parse(results.data[0]['Poem']))
 
   const poems = results.data.slice(0, results.data.length - 1).map((row: any) => {
     return {
@@ -41,9 +42,8 @@ export function parseCSV() {
     };
   });
 
+  // console.log(poems[0].poem);
+  
+
   return poems;
-  // } 
-  // catch (error) {
-  //   throw new Error(error.message);
-  // }
 }

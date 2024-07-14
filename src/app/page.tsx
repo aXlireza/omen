@@ -3,6 +3,7 @@
 // pages/index.js
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 type PoemData = {
   poem: string[];
@@ -11,14 +12,14 @@ type PoemData = {
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<PoemData | null>(null);
+  const [data, setData] = useState<{poem: PoemData, index: Number} | null>(null);
 
   const handleClick = async () => {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
     fetch('/api/random-poem')
       .then((response) => response.json())
-      .then((data: PoemData) => setData(data))
+      .then((data: {poem: PoemData, index: Number}) => setData(data))
       .then(() => setLoading(false))
       .catch((error) => console.error('Error fetching CSV data:', error));
   };
@@ -45,7 +46,10 @@ export default function Home() {
             <span>Another Wish</span>
           </button>
           <div className={`mb-8 transition-opacity duration-1000 ${!loading ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-            <h1 style={{fontFamily: 'Morabba'}} className="font-semibold text-7xl text-stone-700">{data?.poem[0]}</h1>
+            <h1 style={{fontFamily: 'Morabba'}} className="font-semibold text-7xl text-stone-700">{data?.poem.poem[0][0]}</h1>
+            <h1 style={{fontFamily: 'Morabba'}} className="font-semibold text-7xl text-stone-700">{data?.poem.poem[0][1]}</h1>
+            <Link className="text-blue-500 font-light py-2 px-4 flex items-center justify-center mx-auto space-x-2 hover:text-gray-200 transition-opacity duration-1000 outline-offset-0" href={`/poem/${data?.index}`}>Interpretation</Link>
+
           </div>
         </div>
       </div>
