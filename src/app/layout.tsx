@@ -16,10 +16,6 @@ export const metadata: Metadata = {
     creator: "@creator",
     "images": "https://omen-seven.vercel.app/thumbnail.png"
   }
-  // {
-  //   title: "Make a Wish",
-  //   images: ['public/thumbnail.png']
-  // }
 };
 
 export default function RootLayout({
