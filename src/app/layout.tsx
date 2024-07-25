@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import "../../public/fonts/Morabba_Eco/webfont/fontiran.css"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Make a Wish",
@@ -24,8 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html>
+      <body>
+        <Header />
         {children}
         <Analytics />
         <SpeedInsights />

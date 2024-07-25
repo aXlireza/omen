@@ -1,5 +1,5 @@
+import { parseCSV } from '@/lib/csvParser';
 import { NextRequest, NextResponse } from 'next/server';
-import { parseCSV } from '../../../../lib/csvParser';
 
 type PoemData = {
   poem: string[];

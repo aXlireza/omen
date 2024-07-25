@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { parseCSV } from '../../../../lib/csvParser';
 import PoemCard from '@/components/PoemCard';
+import { parseCSV } from '@/lib/csvParser';
 
 export default function Poem({params}: any) {
   const records = parseCSV();
@@ -8,7 +8,7 @@ export default function Poem({params}: any) {
   const { poem, interpreted } = records[Number(params.code)]
   return (<>
     <Head>
-      <title>Poem</title>
+      <title>{poem[0][0]}</title>
     </Head>
     <PoemCard poem={poem} interpreted={interpreted} />
   </>

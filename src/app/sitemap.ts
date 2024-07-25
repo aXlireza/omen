@@ -1,5 +1,5 @@
+import { parseCSV } from '@/lib/csvParser';
 import { MetadataRoute } from 'next'
-import { parseCSV } from '../../lib/csvParser';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const poems = parseCSV();
