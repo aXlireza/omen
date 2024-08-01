@@ -1,8 +1,9 @@
-import { parseCSV } from '@/lib/csvParser';
+import { chehraziCSV, parseCSV } from '@/lib/csvParser';
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const poems = parseCSV();
+  const chehrazi = chehraziCSV();
   return [
     {
       url: 'https://omen-seven.vercel.app/',
@@ -14,9 +15,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       // changeFrequency: 'daily',
       priority: .8,
+    },{
+      url: 'https://omen-seven.vercel.app/chehrazi/',
+      lastModified: new Date(),
+      // changeFrequency: 'daily',
+      priority: .8,
     },
     ...poems.map((data, index) => ({
       url: `https://omen-seven.vercel.app/poem/${index}`,
+      lastModified: new Date(),
+      // changeFrequency: 'monthly',
+      priority: .5,
+    })),
+    ...chehrazi.map((data, index) => ({
+      url: `https://omen-seven.vercel.app/chehrazi/${data.episode}`,
       lastModified: new Date(),
       // changeFrequency: 'monthly',
       priority: .5,

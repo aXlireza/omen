@@ -40,7 +40,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white z-10 relative">
+    <header dir='ltr' className="bg-white z-10 relative">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
@@ -106,6 +106,9 @@ export default function Header() {
           <a href="/poem" className="text-sm font-semibold leading-6 text-gray-900">
             Poems
           </a>
+          <a href="/chehrazi" className="text-sm font-semibold leading-6 text-gray-900">
+            Chechrazi
+          </a>
           <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
             Make a Wish
           </a>
@@ -157,6 +160,12 @@ export default function Header() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure> */}
+                <a
+                  href="/chehrazi"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Chechrazi
+                </a>
                 <a
                   href="/poem"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
