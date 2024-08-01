@@ -5,8 +5,7 @@ import ChehraziCard from '@/components/ChehraziCard';
 
 export default function Poem({params}: any) {
   const records = chehraziCSV();
-
-  const { episode, title, opening, content } = records.find(record => record.episode === params.code)!
+  const { episode, title, opening, content } = records.find(record => Number(record.episode) === Number(params.code))!
   
   console.log(opening.split('.'));
   
