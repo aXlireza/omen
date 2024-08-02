@@ -32,6 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       // changeFrequency: 'monthly',
       priority: .5,
-    }))
+    })),
+    ...chehrazi.map((data, index) => data.quoutes.map((quoute, key) => ({
+      url: `https://omen-seven.vercel.app/chehrazi/${data.episode}/${key}`,
+      lastModified: new Date(),
+      priority: .7,
+    }))).flat()
   ]
 }
