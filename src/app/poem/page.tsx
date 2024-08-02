@@ -6,7 +6,7 @@ export default function Poems() {
   const records = parseCSV();
 
   return (
-    <ul role="list" className="divide-y divide-gray-100">
+    <ul role="list" className="divide-y divide-gray-100 transition-all duration-1000 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
       {records.map((poem, key) => (
         <Link href={`/poem/${key}`} key={key} className="flex gap-x-6 py-5 px-24">
           <div className="flex min-w-0 gap-x-4">

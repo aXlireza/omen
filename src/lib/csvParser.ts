@@ -25,7 +25,13 @@ export function parseCSV() {
   return poems;
 }
 
-type chehrazi = { episode: number; title: string; opening: string; content: string };
+type chehrazi = {
+  episode: number;
+  title: string;
+  opening: string;
+  content: string;
+  quoutes: string[][]
+};
 
 export function chehraziCSV(): chehrazi[] {
   const csvFilePath = path.resolve('./public/chehrazi.csv');
@@ -36,14 +42,17 @@ export function chehraziCSV(): chehrazi[] {
   });
 
   // Map the results to the chehrazi type
-  const data: chehrazi[] = results.data.map(item => {
+  const data: chehrazi[] = results.data.slice(0, results.data.length - 1).map(item => {
     // Cast item to any to access properties, then convert to chehrazi type
     const raw = item as any;
+    const quoutes = raw.quoutes ? JSON.parse(raw.quoutes.replace(/'/g, '"')) : [[]]
+    
     return {
       episode: Number(raw.episode), // Convert string to number if necessary
       title: String(raw.title),
       opening: String(raw.opening),
       content: String(raw.content),
+      quoutes: quoutes
     };
   });
 

@@ -53,43 +53,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    <style jsx global>{`
-      body {
-        font-family: 'Vazir', sans-serif;
-      }
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-      @keyframes gradient2 {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-      .bg-gradient-to-r {
-        background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eac9);
-        background-size: 800% 800%;
-        animation: gradient 100s ease infinite;
-      }
-      .bg-gradient-to-bl {
-        background: linear-gradient(135deg, #6b2d5c, #452b52, #282439);
-        background-size: 800% 800%;
-        animation: gradient2 100s ease infinite;
-      }
-    `}</style>
     </div>
   )
 }
