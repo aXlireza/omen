@@ -23,6 +23,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -116,11 +117,11 @@ export default function Header() {
             Company
           </a> */}
         </PopoverGroup>
-        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div> */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link href="https://github.com/aXlireza" target='_blank' className="text-sm font-semibold leading-6 text-gray-900">
+            aXlireza <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
