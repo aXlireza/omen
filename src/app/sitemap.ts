@@ -6,17 +6,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const chehrazi = chehraziCSV();
   return [
     {
-      url: 'https://omen-seven.vercel.app/',
+      url: 'https://omen-seven.vercel.app',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },{
-      url: 'https://omen-seven.vercel.app/poem/',
+      url: 'https://omen-seven.vercel.app/poem',
       lastModified: new Date(),
       // changeFrequency: 'daily',
       priority: .8,
     },{
-      url: 'https://omen-seven.vercel.app/chehrazi/',
+      url: 'https://omen-seven.vercel.app/chehrazi',
       lastModified: new Date(),
       // changeFrequency: 'daily',
       priority: .8,
