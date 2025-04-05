@@ -118,8 +118,8 @@ export default function Header() {
           </a> */}
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="https://github.com/aXlireza" target='_blank' className="text-sm font-semibold leading-6 text-gray-900">
-            aXlireza <span aria-hidden="true">&rarr;</span>
+          <Link href="https://theenigmax.com" target='_blank' className="text-sm font-semibold leading-6 text-gray-900">
+            theEnigmax <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>

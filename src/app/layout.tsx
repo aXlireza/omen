@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Make a Wish",
-  description: "Omens",
+  description: "Your daily source for Persian fortune-telling, astrology, and spiritual insights. Discover what the universe has in store",
   twitter: {
     card: "summary_large_image",
     site: "@site",
