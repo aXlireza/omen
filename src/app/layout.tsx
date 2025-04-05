@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@site",
     creator: "@creator",
-    "images": "https://omen-seven.vercel.app/thumbnail.png"
+    "images": "https://omen.theenigmax.com/thumbnail.png"
   }
 };
 

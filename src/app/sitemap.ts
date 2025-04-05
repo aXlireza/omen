@@ -6,35 +6,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const chehrazi = chehraziCSV();
   return [
     {
-      url: 'https://omen-seven.vercel.app',
+      url: 'https://omen.theenigmax.com',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },{
-      url: 'https://omen-seven.vercel.app/poem',
+      url: 'https://omen.theenigmax.com/poem',
       lastModified: new Date(),
       // changeFrequency: 'daily',
       priority: .8,
     },{
-      url: 'https://omen-seven.vercel.app/chehrazi',
+      url: 'https://omen.theenigmax.com/chehrazi',
       lastModified: new Date(),
       // changeFrequency: 'daily',
       priority: .8,
     },
     ...poems.map((data, index) => ({
-      url: `https://omen-seven.vercel.app/poem/${index}`,
+      url: `https://omen.theenigmax.com/poem/${index}`,
       lastModified: new Date(),
       // changeFrequency: 'monthly',
       priority: .5,
     })),
     ...chehrazi.map((data, index) => ({
-      url: `https://omen-seven.vercel.app/chehrazi/${data.episode}`,
+      url: `https://omen.theenigmax.com/chehrazi/${data.episode}`,
       lastModified: new Date(),
       // changeFrequency: 'monthly',
       priority: .5,
     })),
     ...chehrazi.map((data, index) => data.quoutes.map((quoute, key) => ({
-      url: `https://omen-seven.vercel.app/chehrazi/${data.episode}/${key}`,
+      url: `https://omen.theenigmax.com/chehrazi/${data.episode}/${key}`,
       lastModified: new Date(),
       priority: .7,
     }))).flat()

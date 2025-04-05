@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '*'
     },
-    sitemap: 'https://omen-seven.vercel.app/sitemap.xml',
+    sitemap: 'https://omen.theenigmax.com/sitemap.xml',
   }
 }
